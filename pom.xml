@@ -10,6 +10,7 @@
 
     <modules>
         <module>mybatis_generator2024</module>
+        <module>cloud-provider-payment8001</module>
     </modules>
 
     <properties>
