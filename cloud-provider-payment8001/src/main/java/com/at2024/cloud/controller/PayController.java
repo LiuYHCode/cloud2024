@@ -3,6 +3,7 @@ package com.at2024.cloud.controller;
 import com.at2024.cloud.entities.Pay;
 import com.at2024.cloud.entities.PayDTO;
 import com.at2024.cloud.resp.ResultData;
+import com.at2024.cloud.resp.ReturnCodeEnum;
 import com.at2024.cloud.service.PayService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -76,5 +77,21 @@ public class PayController {
     public ResultData<List<Pay>> getPayAll() {
         List<Pay> payList = payService.getAll();
         return ResultData.success(payList);
+    }
+
+    @PostMapping("/pay/error")
+    @Operation(summary = "单独异常处理",description = "使用try catch处理异常而不是使用全局异常")
+    public ResultData<Integer> payError() {
+        Integer integer = Integer.valueOf(200);
+
+        try {
+            log.info("come in payError test");
+            int i = 1 / 0;
+        } catch (Exception e) {
+            log.info("异常处理测试{}", e.getMessage());
+            return ResultData.fail(ReturnCodeEnum.RC500.getCode(), ReturnCodeEnum.RC500.getMessage());
+        }
+
+        return ResultData.success(integer);
     }
 }

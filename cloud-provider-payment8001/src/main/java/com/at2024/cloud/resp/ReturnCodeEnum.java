@@ -15,7 +15,8 @@ public enum ReturnCodeEnum {
     RC200("200","success"),
     RC201("201","服务开启降级保护，请稍后在试"),
     RC401("401","匿名用户访问无权限资源时的异常"),
-    RC404("404","404页面找不到的异常");
+    RC404("404","404页面找不到的异常"),
+    RC500("500","服务器内部错误");
 
     private final String code;
     private final String message;
