@@ -3,6 +3,8 @@ package com.at2024.cloud.controller;
 import com.at2024.cloud.entities.Pay;
 import com.at2024.cloud.entities.PayDTO;
 import com.at2024.cloud.service.PayService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -18,12 +20,14 @@ import java.util.List;
  * @date 2024-07-14 18:25:05
  */
 @RestController
+@Tag(name = "支付微服务模块",description = "支付CRUD")
 @Slf4j
 public class PayController {
     @Resource
     private PayService payService;
 
     @PostMapping("/pay/add")
+    @Operation(summary = "新增",description = "新增支付流水方法,json串做参数")
     public String addPay(@RequestBody Pay pay) {
         log.info(pay.toString());
         int i = payService.insert(pay);
@@ -31,6 +35,7 @@ public class PayController {
     }
 
     @PostMapping("/pay/delete/{id}")
+    @Operation(summary = "删除",description = "删除支付流水方法")
     public Integer deletePay(@PathVariable("id") Integer id) {
         return payService.delete(id);
     }
@@ -41,6 +46,7 @@ public class PayController {
      * @return
      */
     @PostMapping("/pay/update")
+    @Operation(summary = "修改",description = "修改支付流水方法")
     public String updatePay(@RequestBody PayDTO payDTO) {
         Pay pay = new Pay();
         log.info(payDTO.toString());
@@ -56,12 +62,14 @@ public class PayController {
      * @return
      */
     @PostMapping("/pay/get/{id}")
+    @Operation(summary = "按照ID查流水",description = "查询支付流水方法")
     public Pay getPay(@PathVariable("id") Integer id) {
         log.info("查询记录id编号:" + id);
         return payService.getById(id);
     }
 
     @PostMapping("/pay/getAll")
+    @Operation(summary = "查询支付的所有信息",description = "查询支付的所有信息方法")
     public List<Pay> getPayAll() {
         return payService.getAll();
     }

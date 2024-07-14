@@ -35,7 +35,7 @@ public class Swagger3Config
                         .description("通用设计rest")
                         .version("v1.0"))
                 .externalDocs(new ExternalDocumentation()
-                        .description("www.hhf.com")
+                        .description("www.lyh.com")
                         .url("https://yiyan.baidu.com/"));
     }
 }
