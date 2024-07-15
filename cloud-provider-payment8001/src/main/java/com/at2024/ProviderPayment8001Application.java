@@ -8,12 +8,12 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
 @MapperScan("com.at2024.**.mapper")
-public class Main8001 {
-    private static Logger LOGGER = LoggerFactory.getLogger(Main8001.class);
+public class ProviderPayment8001Application {
+    private static Logger LOGGER = LoggerFactory.getLogger(ProviderPayment8001Application.class);
 
     public static void main(String[] args) {
         try {
-            SpringApplication.run(Main8001.class, args);
+            SpringApplication.run(ProviderPayment8001Application.class, args);
             LOGGER.info("****************************************cloud8001启动成功****************************************");
         } catch (Exception e) {
             LOGGER.error("cloud8001启动失败",e);
