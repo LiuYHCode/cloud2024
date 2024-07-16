@@ -35,6 +35,8 @@ public class OrderController {
 
     @GetMapping("/consumer/pay/get/{id}")
     public ResultData getOrder(@PathVariable("id") Integer id){
+        //postman测试 http://localhost:80/consumer/pay/get/1
+        //这里请求到8001服务，8001服务需要是Get请求，因为getForObject源码是需要Get请求的返回
         return restTemplate.getForObject(PaymentSrv_URL + "/pay/get/" + id,ResultData.class,id);
     }
 

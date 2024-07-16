@@ -10,10 +10,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,7 +33,7 @@ public class PayController {
         return ResultData.success("成功插入记录，返回值" + i);
     }
 
-    @PostMapping("/pay/delete/{id}")
+    @GetMapping("/pay/delete/{id}")
     @Operation(summary = "删除",description = "删除支付流水方法")
     public ResultData<Integer> deletePay(@PathVariable("id") Integer id) {
         int i = payService.delete(id);
@@ -64,7 +61,7 @@ public class PayController {
      * @param id
      * @return
      */
-    @PostMapping("/pay/get/{id}")
+    @GetMapping("/pay/get/{id}")
     @Operation(summary = "按照ID查流水",description = "查询支付流水方法")
     public ResultData<Pay> getPay(@PathVariable("id") Integer id) {
         log.info("查询记录id编号:" + id);
