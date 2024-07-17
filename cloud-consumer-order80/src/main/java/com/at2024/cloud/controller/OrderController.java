@@ -1,7 +1,7 @@
-package com.at2024.controller;
+package com.at2024.cloud.controller;
 
-import com.at2024.entities.PayDTO;
-import com.at2024.resp.ResultData;
+import com.at2024.cloud.entities.PayDTO;
+import com.at2024.cloud.resp.ResultData;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
