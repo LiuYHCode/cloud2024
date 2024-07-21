@@ -18,6 +18,11 @@
     </properties>
 
     <dependencies>
+        <!--loadbalancer-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
         <!--SpringCloud consul discovery -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -34,11 +39,6 @@
             <groupId>com.at2024</groupId>
             <artifactId>cloud-api-commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <!--loadbalancer-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
         <!--web + actuator-->
         <dependency>

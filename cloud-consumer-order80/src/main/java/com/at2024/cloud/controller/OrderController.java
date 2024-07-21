@@ -3,6 +3,7 @@ package com.at2024.cloud.controller;
 import com.at2024.cloud.entities.PayDTO;
 import com.at2024.cloud.resp.ResultData;
 import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,5 +50,10 @@ public class OrderController {
     @GetMapping("/consumer/pay/delete/{id}")
     public ResultData deleteOrder(@PathVariable("id") Integer id){
         return restTemplate.getForObject(PaymentSrv_URL + "/pay/delete/" + id,ResultData.class,id);
+    }
+
+    @GetMapping(value = "/consumer/pay/get/info")
+    public String getInfoByConsul(){
+        return restTemplate.getForObject(PaymentSrv_URL + "/pay/get/info",String.class);
     }
 }
