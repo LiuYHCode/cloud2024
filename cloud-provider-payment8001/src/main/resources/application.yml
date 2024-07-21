@@ -11,6 +11,16 @@ spring:
     url: jdbc:mysql://localhost:3306/db2024?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
     username: root
     password: password
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        healthCheckEnabled:
+          enabled: true
+      config:
+        enabled: true
 
 # ========================mybatis=============================
 mybatis:
