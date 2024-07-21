@@ -4,3 +4,10 @@ server:
 spring:
   application:
     name: cloud-consumer-order
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        prefer-ip-address: true #优先使用IP地址注册
+        service-name: ${spring.application.name}
