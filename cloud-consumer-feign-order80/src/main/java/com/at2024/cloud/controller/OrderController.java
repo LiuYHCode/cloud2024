@@ -1,5 +1,7 @@
 package com.at2024.cloud.controller;
 
+import cn.hutool.core.date.DateUnit;
+import cn.hutool.core.date.DateUtil;
 import com.at2024.cloud.api.PayFeignApi;
 import com.at2024.cloud.entities.PayDTO;
 import com.at2024.cloud.resp.ResultData;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author lyh
@@ -34,7 +37,14 @@ public class OrderController {
     @GetMapping("/feign/pay/get/{id}")
     public ResultData getPay(@PathVariable("id") Integer id) {
         log.info("-------支付微服务远程调用，按照id查询订单支付流水信息");
-        ResultData resultData = payFeignApi.getPay(id);
+        ResultData resultData = null;
+        try {
+            log.info("调用开始" + DateUtil.now());
+            resultData = payFeignApi.getPay(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.info("调用结束" + DateUtil.now());
+        }
         return resultData;
     }
 
