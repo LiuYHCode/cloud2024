@@ -14,9 +14,12 @@ spring:
     openfeign:
       client:
         config:
-          default:
-            connectTimeout: 3000 #连接超时时间
-            readTimeout: 3000 #读取超时时间
+#          default:
+#            connectTimeout: 3000 #连接超时时间
+#            readTimeout: 3000 #读取超时时间
           cloud-payment-service:
             connectTimeout: 2000 #连接超时时间 两秒
             readTimeout: 2000 #读取超时时间 两秒
+      httpclient:
+        hc5:
+          enabled: true
