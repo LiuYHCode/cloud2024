@@ -39,6 +39,7 @@ spring:
           filters:
             - My=lyh  #这个自定义过滤器，也需要在请求参数带上一个lyh=xxx，http://localhost:9527/pay/gateway/filter?lyh=xxx
             - AddRequestHeader=X-Request-lyh1,lyhValue1  # 请求头kv，若一头含有多参则重写一行设置
+#            - RedirectTo=302, http://www.atguigu.com/ # 访问http://localhost:9527/pay/gateway/filter跳转到http://www.atguigu.com/
 #            - AddRequestHeader=X-Request-at2024-2,at2024fValue2  # 请求头kv，若一头含有多参则重写一行设置
 #            - RemoveRequestHeader=sec-fetch-site      # 删除请求头sec-fetch-site
 #            - SetRequestHeader=sec-fetch-mode, Blue-updatebyhhf # 将请求头sec-fetch-mode对应的值修改为Blue-updatebyhhf
