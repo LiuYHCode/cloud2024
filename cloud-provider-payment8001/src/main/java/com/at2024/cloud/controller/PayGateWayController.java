@@ -43,12 +43,20 @@ public class PayGateWayController {
         while(headers.hasMoreElements()) {
             String headName = headers.nextElement();
             String headValue = request.getHeader(headName);
-            System.out.println("请求头名: " + headName +"\t\t\t"+"请求头值: " + headValue);
+            log.info("请求头名: " + headName +"\t\t\t"+"请求头值: " + headValue);
             if(headName.equalsIgnoreCase("X-Request-lyh1")
                     || headName.equalsIgnoreCase("X-Request-lyh2")) {
                 result = result+headName + "\t " + headValue +" ";
             }
         }
+        //这里是AddRequestParameter所测试用的
+        log.info("=============================================");
+        String customerId = request.getParameter("customerId");
+        log.info("request Parameter customerId: "+customerId);
+
+        String customerName = request.getParameter("customerName");
+        log.info("request Parameter customerName: "+customerName);
+        log.info("=============================================");
         return ResultData.success("getGatewayFilter 过滤器 test： "+result+ DateUtil.now());
     }
 
