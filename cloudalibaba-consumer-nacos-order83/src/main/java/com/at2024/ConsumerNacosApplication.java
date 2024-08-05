@@ -7,18 +7,18 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author lyh
- * @date 2024-08-05 23:25:56
+ * @date 2024-08-05 23:42:31
  */
 @SpringBootApplication
 @EnableDiscoveryClient
 @Slf4j
-public class AlibabaPaymentApplication {
+public class ConsumerNacosApplication {
     public static void main(String[] args) {
         try {
-            SpringApplication.run(AlibabaPaymentApplication.class, args);
-            log.info("****************************************cloud9001启动成功****************************************");
+            SpringApplication.run(ConsumerNacosApplication.class, args);
+            log.info("****************************************Consumer83启动成功****************************************");
         } catch (Exception e) {
-            log.error("cloud9001启动失败",e);
+            log.error("Consumer83启动失败",e);
         }
     }
 }
