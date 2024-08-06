@@ -1,4 +1,4 @@
-package com.at2024.controller;
+package com.at2024.cloud.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;

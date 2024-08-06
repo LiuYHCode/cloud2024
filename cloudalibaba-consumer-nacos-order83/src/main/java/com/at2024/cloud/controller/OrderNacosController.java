@@ -1,4 +1,4 @@
-package com.at2024.controller;
+package com.at2024.cloud.controller;
 
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Value;

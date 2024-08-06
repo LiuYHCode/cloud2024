@@ -12,10 +12,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient
 @Slf4j
-public class AlibabaPaymentApplication {
+public class AlibabaPayment9001Application {
     public static void main(String[] args) {
         try {
-            SpringApplication.run(AlibabaPaymentApplication.class, args);
+            SpringApplication.run(AlibabaPayment9001Application.class, args);
             log.info("****************************************cloud9001启动成功****************************************");
         } catch (Exception e) {
             log.error("cloud9001启动失败",e);
