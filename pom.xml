@@ -38,7 +38,9 @@
         <spring.boot.test.version>3.1.5</spring.boot.test.version>
         <spring.boot.version>3.2.0</spring.boot.version>
         <spring.cloud.version>2023.0.0</spring.cloud.version>
-        <spring.cloud.alibaba.version>2022.0.0.0-RC2</spring.cloud.alibaba.version>
+<!--        <spring.cloud.alibaba.version>2022.0.0.0-RC2</spring.cloud.alibaba.version>-->
+        <!--为了适配sentinel，2023这个版本才适配，不然报错-->
+        <spring.cloud.alibaba.version>2023.0.0.0-RC1</spring.cloud.alibaba.version>
         <!-- 为了适配boot3.2.3，得用以下zipkin的最新版本，不然适配不成功-->
         <micrometer-tracing.version>1.2.0</micrometer-tracing.version>
         <micrometer-observation.version>1.12.0</micrometer-observation.version>

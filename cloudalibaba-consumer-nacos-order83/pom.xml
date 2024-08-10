@@ -18,6 +18,22 @@
     </properties>
 
     <dependencies>
+        <!--引入自定义配置模块-->
+        <dependency>
+            <groupId>com.at2024</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!--openfeign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!--alibaba-sentinel-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
         <!--loadbalancer-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
