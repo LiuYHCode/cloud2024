@@ -38,12 +38,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
-        <!--cloud-api-commons-->
-        <dependency>
-            <groupId>com.at2024</groupId>
-            <artifactId>cloud2024</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <!--web + actuator-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -105,6 +99,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.at2024</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
