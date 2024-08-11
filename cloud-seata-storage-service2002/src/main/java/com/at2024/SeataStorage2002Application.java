@@ -9,20 +9,20 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @author lyh
- * @date 2024-08-11 17:03:34
+ * @date 2024-08-11 18:30:39
  */
 @SpringBootApplication
 @MapperScan("com.at2024.cloud.mapper") //import tk.mybatis.spring.annotation.MapperScan;
 @EnableDiscoveryClient //服务注册和发现
 @EnableFeignClients
 @Slf4j
-public class SeataOrder2001Application {
+public class SeataStorage2002Application {
     public static void main(String[] args) {
         try {
-            SpringApplication.run(SeataOrder2001Application.class, args);
-            log.info("****************************************seataOrder2001启动成功****************************************");
+            SpringApplication.run(SeataStorage2002Application.class, args);
+            log.info("****************************************seata-storage2002启动成功****************************************");
         } catch (Exception e) {
-            log.error("seataOrder2001启动失败",e);
+            log.error("seata-storage2002启动失败",e);
         }
     }
 }

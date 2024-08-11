@@ -22,6 +22,8 @@
         <module>cloudalibaba-sentinel-service8401</module>
         <module>cloudalibaba-sentinel-gateway9528</module>
         <module>cloud-seata-order-service2001</module>
+        <module>cloud-seata-storage-service2002</module>
+        <module>cloud-seata-account-service2003</module>
     </modules>
 
     <properties>
@@ -38,11 +40,14 @@
         <fastjson2.version>2.0.40</fastjson2.version>
         <persistence-api.version>1.0.2</persistence-api.version>
         <spring.boot.test.version>3.1.5</spring.boot.test.version>
-        <spring.boot.version>3.2.0</spring.boot.version>
-        <spring.cloud.version>2023.0.0</spring.cloud.version>
-<!--        <spring.cloud.alibaba.version>2022.0.0.0-RC2</spring.cloud.alibaba.version>-->
-        <!--为了适配sentinel，2023这个版本才适配，不然报错-->
-        <spring.cloud.alibaba.version>2023.0.0.0-RC1</spring.cloud.alibaba.version>
+<!--        <spring.boot.version>3.2.0</spring.boot.version>-->
+<!--        <spring.cloud.version>2023.0.0</spring.cloud.version>-->
+        <!--为了适配seata，需要将boot、cloud降级版本，其它情况重新换回2023的-->
+        <spring.boot.version>3.1.7</spring.boot.version>
+        <spring.cloud.version>2022.0.4</spring.cloud.version>
+        <spring.cloud.alibaba.version>2022.0.0.0-RC2</spring.cloud.alibaba.version>
+        <!--为了适配sentinel，sentinel整合openfeign情况，2023这个版本才适配，不然报错-->
+<!--        <spring.cloud.alibaba.version>2023.0.0.0-RC1</spring.cloud.alibaba.version>-->
         <!-- 为了适配boot3.2.3，得用以下zipkin的最新版本，不然适配不成功-->
         <micrometer-tracing.version>1.2.0</micrometer-tracing.version>
         <micrometer-observation.version>1.12.0</micrometer-observation.version>
