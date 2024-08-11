@@ -22,7 +22,7 @@ public class AccountServiceImpl implements AccountService {
     public void decrease(Long userId, Long money) {
         log.info("------->account-service中扣减账户余额开始");
         accountMapper.decrease(userId,money);
-        myTimeOut();
+//        myTimeOut();
 //        int age = 10/0;
         log.info("------->account-service中扣减账户余额结束");
     }
