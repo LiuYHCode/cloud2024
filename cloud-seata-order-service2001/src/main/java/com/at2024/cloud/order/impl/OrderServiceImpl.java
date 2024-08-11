@@ -50,7 +50,7 @@ public class OrderServiceImpl implements OrderService {
             log.info("-------> 订单微服务开始调用Account账号，做扣减money");
             accountFeignApi.decrease(orderFromDB.getUserId(), orderFromDB.getMoney());
             log.info("-------> 订单微服务结束调用Account账号，做扣减完成");
-            System.out.println();
+            log.info("");
             //修改原始订单状态
             //订单状态status：0：创建中；1：已完结
             log.info("-------> 修改订单状态");
